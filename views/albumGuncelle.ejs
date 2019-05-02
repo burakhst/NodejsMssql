@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table th {
+            float: right;
+            margin: 5px;
+            padding: 0px 0px 20px 0px;
+        }
+        
+    </style>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Albüm Güncelle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css" />
+</head>
+<body>
+    <div class="container card" style="margin-top:30px; padding:30px; width: 940px; ">
+        <table>
+            
+            <form action="/albumGuncellendi" method="POST">
+                <tr>
+                    <th>Sanatçı Id :</th>
+                    <td><input class="input" type="text" name="_aId"  value="<%= a_Id %>" readonly></td>
+                </tr>
+                
+                <tr>
+                    <th>Albüm Adı :</th>
+                    <td><input style="width:500px;" class="input" type="text" name="_aAdi" placeholder="Albüm Adı"></td>
+                </tr>
+                <tr>
+                    <th>Çıkış Tarihi :</th>
+                    <td><input class="input" type="date" name="_cikisT" placeholder="Çıkış Tarihi"></td>
+                </tr>
+                <tr>
+                    <th>Müzik Türü :</th>
+                    <td><select class="input" name="_mId" >
+                            <% veri2_2[0].forEach(function(kayıt) { %><option value="<%= kayıt.MuzikTurId  %>"><%= kayıt.MuzikTur  %></option><% }); %>
+                        </select></td>
+                </tr>
+                <tr>
+                    <th>Sanatçı Adı :</th>
+                    <td><select class="input" name="_sId" >
+                            <% veri2_2[1].forEach(function(kayıt) { %><option value="<%= kayıt.SanatciId %>"><%= kayıt.SanatciAdi  %></option><% }); %>
+                        </select></td>
+                </tr>
+                
+                <tr>
+                    <th></th>
+                    <td>
+                             <button  type="submit" class="button is-link">Kaydet</button>
+        
+                        <a href="/albumListe" class="button">İPTAL</a>
+                    </td>
+            
+                </tr>
+            </form>
+        </table>
+
+
+    </div>
+</body>
+
+</html>

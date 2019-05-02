@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table th {
+            float: right;
+            margin: 5px;
+            padding: 0px 0px 20px 0px;
+        }
+        
+    </style>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sanatçı Ekle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css" />
+</head>
+<body>
+    <div class="container card" style="margin-top:30px; padding:30px; width: 940px; ">
+        <table>
+            <form action="/sanatciEkle" method="POST">
+             
+                <tr>
+                    <th>Sanatçı Adı :</th>
+                    <td><input style="width:500px;" class="input" type="text" name="sAdi" placeholder="Sanatçı Adı"></td>
+                </tr>
+                <tr>
+                    <th>Sanatçı Yaşıyor Mu? :</th>
+                    <td><input style="margin-top:10px;" type="radio" name="sYasm" value="1" placeholder="Sanatçı Yaşıyor Mu?" required>Evet &nbsp;
+                    <input  type="radio" name="sYasm" value="0" placeholder="Sanatçı yaşıyor mu?" required>Hayır
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <th>Sanatçı Doğum Tarihi :</th>
+                    <td><input class="input" type="date" name="sDogum" placeholder="Doğum Tarihi"></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <button type="submit" class="button is-link">Kaydet</button>
+                        <a href="/liste" class="button">İPTAL</a>
+                    </td>
+                </tr>
+            </form>
+        </table>
+
+
+    </div>
+</body>
+
+</html>
